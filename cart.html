@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Carrito – Hangover Marketplace</title>
+<meta name="description" content="Revisa tu carrito de compras y completa tu pedido en Hangover Marketplace.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="cart">
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Hangover" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text">HANGOVER</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>🛒 Tu carrito</h1>
+    <p>Revisa tus productos y completa tu pedido</p>
+  </div>
+</div>
+
+<!-- EMPTY STATE -->
+<div class="cart-empty" id="cart-empty" style="display:flex">
+  <div class="empty-icon">🛒</div>
+  <h2 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800">Tu carrito está vacío</h2>
+  <p style="color:var(--txt2)">¡Agrega productos del catálogo para armar tu fiesta perfecta!</p>
+  <a href="catalog.html" class="btn btn-primary">Ir al catálogo</a>
+</div>
+
+<div class="cart-layout" id="cart-summary" style="display:none">
+  <!-- ITEMS -->
+  <div>
+    <div class="cart-panel">
+      <div class="panel-title">📦 Productos seleccionados
+        <button id="clear-cart-btn" class="btn btn-ghost btn-sm" style="margin-left:auto;font-size:12px">🗑 Vaciar carrito</button>
+      </div>
+      <div id="cart-items"></div>
+    </div>
+  </div>
+
+  <!-- SUMMARY + CHECKOUT -->
+  <div>
+    <div class="cart-panel" style="margin-bottom:20px">
+      <div class="panel-title">💰 Resumen del pedido</div>
+      <div class="summary-row"><span>Subtotal</span><span class="val" id="summary-sub">$0</span></div>
+      <div class="summary-row"><span>Servicio (5%)</span><span class="val" id="summary-fee">$0</span></div>
+      <div class="summary-row total"><span>Total</span><span class="val" id="summary-total">$0</span></div>
+    </div>
+
+    <div class="cart-panel">
+      <div class="panel-title">📋 Datos del pedido</div>
+      <form class="checkout-form" onsubmit="event.preventDefault();handleCheckout()">
+        <div class="form-field">
+          <label>Nombre completo</label>
+          <input type="text" id="co-name" class="field-input" placeholder="Tu nombre completo" required>
+        </div>
+        <div class="form-field">
+          <label>Correo electrónico</label>
+          <input type="email" id="co-email" class="field-input" placeholder="tu@correo.com" required>
+        </div>
+        <div class="form-field">
+          <label>Teléfono / WhatsApp</label>
+          <input type="tel" id="co-phone" class="field-input" placeholder="+57 300 000 0000" required>
+        </div>
+        <div class="form-field">
+          <label>Fecha del evento</label>
+          <input type="date" id="co-date" class="field-input" required>
+        </div>
+        <div class="form-field">
+          <label>Dirección de entrega</label>
+          <input type="text" id="co-address" class="field-input" placeholder="Calle, ciudad, barrio">
+        </div>
+        <div class="form-field">
+          <label>Método de pago</label>
+          <select class="field-select" id="co-payment">
+            <option>💳 Tarjeta de crédito/débito</option>
+            <option>📱 Nequi / Daviplata</option>
+            <option>🏦 Transferencia bancaria</option>
+            <option>💵 Contra entrega</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" id="checkout-btn" style="margin-top:8px">✅ Confirmar pedido</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="success-modal">
+  <div class="modal-box">
+    <div class="modal-icon">🎊</div>
+    <h2>¡Pedido confirmado!</h2>
+    <p>¡Gracias <strong id="modal-name"></strong>! Tu fiesta está en camino. Te contactaremos pronto por WhatsApp para coordinar la entrega.</p>
+    <a href="catalog.html" class="btn btn-primary" onclick="document.getElementById('success-modal').style.display='none'">Seguir comprando</a>
+    <br><br>
+    <a href="index.html" class="btn btn-outline" onclick="document.getElementById('success-modal').style.display='none'">Ir al inicio</a>
+  </div>
+</div>
+
+<footer style="background:var(--bg2);border-top:1px solid var(--border);padding:24px 5%;text-align:center;color:var(--txt2);font-size:13px;margin-top:40px">
+  © 2026 Hangover Marketplace · <a href="index.html" style="color:var(--purple)">Volver al inicio</a>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

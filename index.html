@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hangover – Arma tu fiesta perfecta desde casa</title>
+<meta name="description" content="Hangover es el marketplace de fiestas #1. Alquila o compra sonido, decoración, catering, mobiliario e iluminación para tu evento perfecto.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="index">
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Hangover" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text">HANGOVER</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge" id="cart-count">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <img src="images/logo.png" alt="Hangover" class="hero-logo" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="hero-tag">🎉 El marketplace de fiestas #1</div>
+    <h1>Arma tu fiesta<br><span>perfecta desde casa</span></h1>
+    <p>Todo lo que necesitas para tu evento en un solo lugar. Alquila o compra equipos de sonido, decoraciones, mobiliario, catering e iluminación.</p>
+    <div class="hero-btns">
+      <a href="catalog.html" class="btn btn-primary">Explorar catálogo →</a>
+      <a href="#categorias" class="btn btn-outline">Ver categorías</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num" data-count="500" data-suffix="+">0</div><div class="stat-label">Productos disponibles</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="1200" data-suffix="+">0</div><div class="stat-label">Fiestas realizadas</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-label">Clientes satisfechos</div></div>
+      <div class="stat-item"><div class="stat-num" data-count="24" data-suffix="/7">0</div><div class="stat-label">Soporte disponible</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section id="categorias">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-tag">Categorías</div>
+      <h2 class="section-title">Todo para tu fiesta</h2>
+      <p class="section-sub">Desde el sonido hasta el último detalle decorativo.</p>
+    </div>
+    <div class="cats-grid">
+      <a href="catalog.html?cat=sonido" class="cat-card"><div class="cat-icon">🔊</div><div class="cat-name">Sonido</div><div class="cat-desc">Equipos de audio profesional</div></a>
+      <a href="catalog.html?cat=decoracion" class="cat-card"><div class="cat-icon">🎊</div><div class="cat-name">Decoración</div><div class="cat-desc">Ambientación y detalles</div></a>
+      <a href="catalog.html?cat=catering" class="cat-card"><div class="cat-icon">🍽️</div><div class="cat-name">Catering</div><div class="cat-desc">Comida, bebidas y barras</div></a>
+      <a href="catalog.html?cat=mobiliario" class="cat-card"><div class="cat-icon">🪑</div><div class="cat-name">Mobiliario</div><div class="cat-desc">Mesas, sillas y lounge</div></a>
+      <a href="catalog.html?cat=iluminacion" class="cat-card"><div class="cat-icon">💡</div><div class="cat-name">Iluminación</div><div class="cat-desc">Luces y efectos visuales</div></a>
+      <a href="catalog.html?cat=entretenimiento" class="cat-card"><div class="cat-icon">🎉</div><div class="cat-name">Entretenimiento</div><div class="cat-desc">DJ, foto y diversión</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section style="padding-top:0">
+  <div class="section-inner">
+    <div class="section-head" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div>
+        <div class="section-tag">Destacados</div>
+        <h2 class="section-title">Lo más popular</h2>
+      </div>
+      <a href="catalog.html" class="btn btn-outline">Ver todo el catálogo →</a>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="section-inner">
+    <div class="section-head centered">
+      <div class="section-tag">Proceso</div>
+      <h2 class="section-title">¿Cómo funciona?</h2>
+      <p class="section-sub">En 4 simples pasos tienes todo listo para tu fiesta épica.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><div class="step-num">1</div><h3>Elige tus productos</h3><p>Navega nuestro catálogo y selecciona todo lo que necesitas para tu evento.</p></div>
+      <div class="step-card"><div class="step-num">2</div><h3>Agrega al carrito</h3><p>Selecciona si quieres alquilar o comprar, elige la fecha y los días.</p></div>
+      <div class="step-card"><div class="step-num">3</div><h3>Confirma tu pedido</h3><p>Completa tus datos y el método de pago de forma rápida y segura.</p></div>
+      <div class="step-card"><div class="step-num">4</div><h3>Recibe y disfruta</h3><p>Entregamos en tu dirección con instalación incluida. ¡A celebrar!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="section-inner">
+    <div class="section-head centered">
+      <div class="section-tag">Reseñas</div>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"La mejor decisión que tomé para mi quinceañera. Todo llegó a tiempo, el sonido era increíble y la decoración superó mis expectativas."</p>
+        <div class="testi-author"><div class="testi-avatar">V</div><div><div class="testi-name">Valentina Torres</div><div class="testi-city">Medellín, Colombia</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Usé Hangover para el matrimonio de mi hermana y quedamos boquiabiertos. El equipo de DJ y las luces transformaron completamente el salón."</p>
+        <div class="testi-author"><div class="testi-avatar">C</div><div><div class="testi-name">Carlos Mendoza</div><div class="testi-city">Bogotá, Colombia</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Increíble plataforma. Armé toda la fiesta de cumpleaños de mi papá desde el celular. El proceso fue súper fácil y el resultado espectacular."</p>
+        <div class="testi-author"><div class="testi-avatar">L</div><div><div class="testi-name">Laura Jiménez</div><div class="testi-city">Barranquilla, Colombia</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>¿Listo para tu fiesta perfecta? 🎊</h2>
+  <p>Más de 1.200 fiestas épicas organizadas. La tuya es la siguiente.</p>
+  <div class="cta-btns">
+    <a href="catalog.html" class="btn btn-primary">Explorar catálogo</a>
+    <a href="#contacto" class="btn btn-outline">Hablar con un asesor</a>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter" id="contacto">
+  <h2>¡No te pierdas nada! 🎉</h2>
+  <p>Recibe ofertas exclusivas, ideas para fiestas y novedades en tu correo.</p>
+  <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+    <input type="email" placeholder="tu@correo.com" id="nl-email" required>
+    <button type="submit" class="btn btn-primary">Suscribirme</button>
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Hangover" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-text">HANGOVER</span>
+      </div>
+      <p class="footer-desc">El marketplace de fiestas #1 en Colombia. Todo lo que necesitas para celebrar a lo grande.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Catálogo</h4>
+      <ul>
+        <li><a href="catalog.html?cat=sonido">Sonido</a></li>
+        <li><a href="catalog.html?cat=decoracion">Decoración</a></li>
+        <li><a href="catalog.html?cat=catering">Catering</a></li>
+        <li><a href="catalog.html?cat=mobiliario">Mobiliario</a></li>
+        <li><a href="catalog.html?cat=iluminacion">Iluminación</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Trabaja con nosotros</a></li>
+        <li><a href="#">Afiliados</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="#">Centro de ayuda</a></li>
+        <li><a href="#">Política de alquiler</a></li>
+        <li><a href="#">Devoluciones</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hangover Marketplace. Todos los derechos reservados.</span>
+    <div class="footer-socials">
+      <div class="social-btn">📸</div>
+      <div class="social-btn">📘</div>
+      <div class="social-btn">🐦</div>
+      <div class="social-btn">▶️</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<script>
+function handleNewsletter(e){e.preventDefault();Cart.showToast('✅ ¡Suscrito! Pronto recibirás nuestras ofertas.');document.getElementById('nl-email').value='';}
+</script>
+</body>
+</html>
