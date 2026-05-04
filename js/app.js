@@ -1,6 +1,19 @@
 /* ── app.js – Hangover Marketplace ── */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const isLoginPage = window.location.pathname.endsWith('login.html') || window.location.pathname.endsWith('register.html');
+  
+  if (!isLoggedIn && !isLoginPage) {
+    window.location.href = 'login.html';
+    return;
+  }
+  if (isLoggedIn && isLoginPage) {
+    window.location.href = 'index.html';
+    return;
+  }
+
+  updateNavbar();
   Cart.updateCartBadge();
   const page = document.body.dataset.page;
   if (page === 'index')    initIndex();
@@ -8,6 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === 'cart')     initCart();
   if (page === 'product')  initProduct();
 });
+
+function updateNavbar() {
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const navRight = document.querySelector('.nav-right');
+  if (navRight && isLoggedIn) {
+    const cartBtn = navRight.querySelector('.cart-btn');
+    navRight.innerHTML = `<a href="#" class="btn btn-ghost" style="padding: 8px 16px; font-size: 14px;" onclick="handleLogout(event)">Cerrar sesión</a>`;
+    if (cartBtn) navRight.appendChild(cartBtn);
+  }
+}
+
+function handleLogout(e) {
+  if (e) e.preventDefault();
+  localStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('userType');
+  window.location.href = 'login.html';
+}
 
 /* ─── SHARED: product card ─── */
 function buildCard(p, compact = false) {

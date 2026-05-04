@@ -227,6 +227,37 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 5% 
 .newsletter-form input{flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);border-radius:50px;padding:14px 24px;color:#fff;font-size:14px;outline:none;transition:var(--tr)}
 .newsletter-form input:focus{border-color:var(--purple)}
 
+/* AUTH PAGE */
+.auth-layout{min-height:92vh;display:flex;align-items:center;justify-content:center;padding:80px 5%;position:relative}
+.auth-bg{position:absolute;inset:0;background:url('../images/hero.png') center/cover no-repeat;opacity:.05;z-index:0}
+.auth-card{background:rgba(20,20,42,0.6);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:48px 40px;width:100%;max-width:500px;position:relative;z-index:1;box-shadow:0 32px 80px rgba(0,0,0,0.5)}
+.auth-header{text-align:center;margin-bottom:32px}
+.auth-header h1{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;margin-bottom:8px}
+.auth-header p{color:var(--txt2);font-size:15px}
+.auth-tabs{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:50px;padding:6px;margin-bottom:32px}
+.auth-tab{flex:1;text-align:center;padding:12px 20px;font-size:14px;font-weight:600;color:var(--txt2);border-radius:50px;cursor:pointer;transition:var(--tr)}
+.auth-tab.active{background:var(--grad);color:#fff}
+.auth-form{display:none;flex-direction:column;gap:20px}
+.auth-form.active{display:flex;animation:fadeUp 0.4s ease both}
+.auth-field{display:flex;flex-direction:column;gap:8px}
+.auth-field label{font-size:13px;font-weight:500;color:var(--txt2)}
+.auth-field input{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;outline:none;transition:var(--tr)}
+.auth-field input:focus{border-color:var(--purple);box-shadow:0 0 0 4px rgba(124,58,237,0.1)}
+.auth-forgot{text-align:right;font-size:13px;color:var(--purple);font-weight:500;margin-top:-8px}
+.auth-forgot:hover{text-decoration:underline}
+.auth-submit{margin-top:12px}
+.auth-footer{text-align:center;margin-top:32px;font-size:14px;color:var(--txt2)}
+.auth-footer a{color:var(--purple);font-weight:600;transition:var(--tr)}
+.auth-footer a:hover{color:var(--pink);text-decoration:underline}
+.btn-facebook{background:#1877F2;color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;border-radius:12px;border:none;cursor:pointer;transition:var(--tr);font-family:'Inter',sans-serif;font-size:15px}
+.btn-facebook:hover{background:#166FE5;transform:translateY(-1px)}
+.auth-divider{display:flex;align-items:center;text-align:center;color:var(--txt2);font-size:13px;margin:16px 0}
+.auth-divider::before, .auth-divider::after{content:'';flex:1;border-bottom:1px solid var(--border)}
+.auth-divider:not(:empty)::before{margin-right:12px}
+.auth-divider:not(:empty)::after{margin-left:12px}
+.auth-field select{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:#fff;font-size:15px;outline:none;transition:var(--tr);-webkit-appearance:none;appearance:none;width:100%;cursor:pointer}
+.auth-field select option{background:var(--bg2)}
+
 /* RESPONSIVE */
 @media(max-width:1024px){.catalog-layout{grid-template-columns:1fr}.sidebar{position:static}.cart-layout{grid-template-columns:1fr}.pd-wrap{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-links{display:none}.hero h1{font-size:36px}.hero-stats{gap:24px}.cats-grid{grid-template-columns:repeat(3,1fr)}.products-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}.cta-banner{margin:0 0 60px;border-radius:0}}

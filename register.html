@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Registro – Hangover</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .auth-switch { text-align: center; margin-top: 16px; font-size: 14px; color: var(--txt2); }
+  .auth-switch a { color: var(--purple); font-weight: 600; cursor: pointer; transition: var(--tr); }
+  .auth-switch a:hover { color: var(--pink); text-decoration: underline; }
+  .auth-card { max-width: 580px; } /* Slightly wider for registration forms */
+</style>
+</head>
+<body data-page="login"> <!-- use login logic for redirect if already logged in -->
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Hangover" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text">HANGOVER</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+      <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="btn btn-ghost" style="padding: 8px 16px; font-size: 14px;">Iniciar sesión</a>
+      <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge" id="cart-count">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="auth-layout">
+  <div class="auth-bg"></div>
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>Crear Cuenta</h1>
+      <p>Únete al marketplace de fiestas #1</p>
+    </div>
+
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="switchTab('user')">Para tu fiesta</div>
+      <div class="auth-tab" onclick="switchTab('provider')">Soy Proveedor</div>
+    </div>
+
+    <!-- USER REGISTRATION FORM -->
+    <form id="form-user" class="auth-form active" onsubmit="handleRegister(event, 'user')">
+      
+      <button type="button" class="btn-facebook" onclick="handleSocialRegister('facebook')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+        Registrarse con Facebook
+      </button>
+
+      <div class="auth-divider">o regístrate con tu correo</div>
+
+      <div class="auth-field">
+        <label for="user-name">Nombre completo</label>
+        <input type="text" id="user-name" placeholder="Ej: Valentina Torres" required>
+      </div>
+      <div class="auth-field">
+        <label for="user-email">Correo electrónico</label>
+        <input type="email" id="user-email" placeholder="tu@correo.com" required>
+      </div>
+      <div class="auth-field">
+        <label for="user-pass">Contraseña</label>
+        <input type="password" id="user-pass" placeholder="Crea una contraseña segura" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg auth-submit">Crear cuenta</button>
+      <div class="auth-switch">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></div>
+    </form>
+
+    <!-- PROVIDER REGISTRATION FORM -->
+    <form id="form-provider" class="auth-form" onsubmit="handleRegister(event, 'provider')">
+      
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div class="auth-field" style="flex:1;min-width:200px">
+          <label for="prov-name">Nombre de la empresa</label>
+          <input type="text" id="prov-name" placeholder="Nombre comercial" required>
+        </div>
+        <div class="auth-field" style="flex:1;min-width:200px">
+          <label for="prov-nit">NIT / Documento</label>
+          <input type="text" id="prov-nit" placeholder="Ej: 900123456-7" required>
+        </div>
+      </div>
+
+      <div class="auth-field">
+        <label for="prov-cat">Categoría principal de servicio</label>
+        <select id="prov-cat" required>
+          <option value="" disabled selected>Selecciona una categoría...</option>
+          <option value="sonido">🔊 Sonido y Audio</option>
+          <option value="decoracion">🎊 Decoración</option>
+          <option value="catering">🍽️ Catering y Bebidas</option>
+          <option value="mobiliario">🪑 Mobiliario</option>
+          <option value="iluminacion">💡 Iluminación</option>
+          <option value="entretenimiento">🎉 Entretenimiento (DJ, Fotos, etc.)</option>
+        </select>
+      </div>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div class="auth-field" style="flex:1;min-width:200px">
+          <label for="prov-email">Correo de contacto</label>
+          <input type="email" id="prov-email" placeholder="contacto@empresa.com" required>
+        </div>
+        <div class="auth-field" style="flex:1;min-width:200px">
+          <label for="prov-phone">Teléfono / Celular</label>
+          <input type="tel" id="prov-phone" placeholder="+57 300 000 0000" required>
+        </div>
+      </div>
+
+      <div class="auth-field">
+        <label for="prov-pass">Contraseña</label>
+        <input type="password" id="prov-pass" placeholder="Crea una contraseña segura" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg auth-submit" style="background: var(--grad2);">Enviar solicitud de proveedor</button>
+      <div class="auth-switch">¿Ya eres proveedor? <a href="login.html">Inicia sesión</a></div>
+    </form>
+    
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Hangover" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-text">HANGOVER</span>
+      </div>
+      <p class="footer-desc">El marketplace de fiestas #1 en Colombia.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // Check URL params to open the right tab
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('tab') === 'provider') {
+      switchTab('provider');
+    }
+  });
+
+  function switchTab(type) {
+    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    
+    if (type === 'user') {
+      document.querySelectorAll('.auth-tab')[0].classList.add('active');
+      document.getElementById('form-user').classList.add('active');
+    } else {
+      document.querySelectorAll('.auth-tab')[1].classList.add('active');
+      document.getElementById('form-provider').classList.add('active');
+    }
+  }
+
+  function handleRegister(e, type) {
+    e.preventDefault();
+    if (type === 'provider') {
+      Cart.showToast('✅ ¡Solicitud enviada! Revisaremos tus datos.');
+    } else {
+      Cart.showToast('✅ ¡Cuenta creada exitosamente!');
+    }
+    
+    // Auto login
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userType', type);
+    
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1800);
+  }
+
+  function handleSocialRegister(provider) {
+    Cart.showToast('✅ Conectando con ' + provider + '...');
+    setTimeout(() => {
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userType', 'user');
+      window.location.href = 'index.html';
+    }, 1500);
+  }
+</script>
+</body>
+</html>

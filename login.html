@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Iniciar Sesión – Hangover</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .auth-switch { text-align: center; margin-top: 16px; font-size: 14px; color: var(--txt2); }
+  .auth-switch a { color: var(--purple); font-weight: 600; cursor: pointer; transition: var(--tr); }
+  .auth-switch a:hover { color: var(--pink); text-decoration: underline; }
+</style>
+</head>
+<body data-page="login">
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Hangover" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="logo-text">HANGOVER</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalog.html">Catálogo</a></li>
+      <li><a href="index.html#como-funciona">Cómo funciona</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="btn btn-ghost" style="padding: 8px 16px; font-size: 14px;">Iniciar sesión</a>
+      <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge" id="cart-count">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="auth-layout">
+  <div class="auth-bg"></div>
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>Bienvenido</h1>
+      <p>Ingresa a tu cuenta para continuar</p>
+    </div>
+
+    <div class="auth-tabs">
+      <div class="auth-tab active" onclick="switchTab('user')">Para tu fiesta</div>
+      <div class="auth-tab" onclick="switchTab('provider')">Soy Proveedor</div>
+    </div>
+
+    <!-- USER LOGIN FORM -->
+    <form id="form-user" class="auth-form active" onsubmit="handleLogin(event, 'user')">
+      <div class="auth-field">
+        <label for="user-email">Correo electrónico</label>
+        <input type="email" id="user-email" placeholder="tu@correo.com" required>
+      </div>
+      <div class="auth-field">
+        <label for="user-pass">Contraseña</label>
+        <input type="password" id="user-pass" placeholder="••••••••" required>
+      </div>
+      <a href="#" class="auth-forgot">¿Olvidaste tu contraseña?</a>
+      <button type="submit" class="btn btn-primary btn-lg auth-submit">Ingresar</button>
+      <div class="auth-switch">¿No tienes cuenta? <a href="register.html?tab=user">Regístrate aquí</a></div>
+    </form>
+
+    <!-- PROVIDER LOGIN FORM -->
+    <form id="form-provider" class="auth-form" onsubmit="handleLogin(event, 'provider')">
+      <div class="auth-field">
+        <label for="prov-email">Correo de empresa / proveedor</label>
+        <input type="email" id="prov-email" placeholder="contacto@empresa.com" required>
+      </div>
+      <div class="auth-field">
+        <label for="prov-pass">Contraseña</label>
+        <input type="password" id="prov-pass" placeholder="••••••••" required>
+      </div>
+      <a href="#" class="auth-forgot">¿Olvidaste tu contraseña?</a>
+      <button type="submit" class="btn btn-primary btn-lg auth-submit" style="background: var(--grad2);">Ingresar como Proveedor</button>
+      <div class="auth-switch">¿Quieres ofrecer tus servicios? <a href="register.html?tab=provider">Aplica aquí</a></div>
+    </form>
+    
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Hangover" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="footer-logo-text">HANGOVER</span>
+      </div>
+      <p class="footer-desc">El marketplace de fiestas #1 en Colombia. Todo lo que necesitas para celebrar a lo grande.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Catálogo</h4>
+      <ul>
+        <li><a href="catalog.html?cat=sonido">Sonido</a></li>
+        <li><a href="catalog.html?cat=decoracion">Decoración</a></li>
+        <li><a href="catalog.html?cat=catering">Catering</a></li>
+        <li><a href="catalog.html?cat=mobiliario">Mobiliario</a></li>
+        <li><a href="catalog.html?cat=iluminacion">Iluminación</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Trabaja con nosotros</a></li>
+        <li><a href="#">Afiliados</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="#">Centro de ayuda</a></li>
+        <li><a href="#">Política de alquiler</a></li>
+        <li><a href="#">Devoluciones</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Hangover Marketplace. Todos los derechos reservados.</span>
+    <div class="footer-socials">
+      <div class="social-btn">📸</div>
+      <div class="social-btn">📘</div>
+      <div class="social-btn">🐦</div>
+      <div class="social-btn">▶️</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<script>
+  function switchTab(type) {
+    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+    
+    if (type === 'user') {
+      document.querySelectorAll('.auth-tab')[0].classList.add('active');
+      document.getElementById('form-user').classList.add('active');
+    } else {
+      document.querySelectorAll('.auth-tab')[1].classList.add('active');
+      document.getElementById('form-provider').classList.add('active');
+    }
+  }
+
+  function handleLogin(e, type) {
+    e.preventDefault();
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userType', type);
+    Cart.showToast('✅ ¡Sesión iniciada correctamente!');
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 1500);
+  }
+</script>
+</body>
+</html>
