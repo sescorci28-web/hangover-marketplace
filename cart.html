@@ -20,7 +20,7 @@
       <li><a href="catalog.html">Catálogo</a></li>
     </ul>
     <div class="nav-right">
-      <a href="login.html" class="btn btn-ghost" style="padding: 8px 16px; font-size: 14px;">Iniciar sesión</a>
+      <a href="login.html" class="btn btn-ghost nav-login-btn">Iniciar sesión</a>
       <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge">0</span></a>
     </div>
   </div>
@@ -34,19 +34,19 @@
 </div>
 
 <!-- EMPTY STATE -->
-<div class="cart-empty" id="cart-empty" style="display:flex">
+<div class="cart-empty cart-empty-visible" id="cart-empty">
   <div class="empty-icon">🛒</div>
-  <h2 style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:800">Tu carrito está vacío</h2>
-  <p style="color:var(--txt2)">¡Agrega productos del catálogo para armar tu fiesta perfecta!</p>
+  <h2 class="cart-empty-title">Tu carrito está vacío</h2>
+  <p class="cart-empty-text">¡Agrega productos del catálogo para armar tu fiesta perfecta!</p>
   <a href="catalog.html" class="btn btn-primary">Ir al catálogo</a>
 </div>
 
-<div class="cart-layout" id="cart-summary" style="display:none">
+<div class="cart-layout cart-summary-hidden" id="cart-summary">
   <!-- ITEMS -->
   <div>
     <div class="cart-panel">
       <div class="panel-title">📦 Productos seleccionados
-        <button id="clear-cart-btn" class="btn btn-ghost btn-sm" style="margin-left:auto;font-size:12px">🗑 Vaciar carrito</button>
+        <button id="clear-cart-btn" class="btn btn-ghost btn-sm cart-clear-btn">🗑 Vaciar carrito</button>
       </div>
       <div id="cart-items"></div>
     </div>
@@ -54,7 +54,7 @@
 
   <!-- SUMMARY + CHECKOUT -->
   <div>
-    <div class="cart-panel" style="margin-bottom:20px">
+    <div class="cart-panel cart-panel-spaced">
       <div class="panel-title">💰 Resumen del pedido</div>
       <div class="summary-row"><span>Subtotal</span><span class="val" id="summary-sub">$0</span></div>
       <div class="summary-row"><span>Servicio (5%)</span><span class="val" id="summary-fee">$0</span></div>
@@ -93,7 +93,7 @@
             <option>💵 Contra entrega</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg" id="checkout-btn" style="margin-top:8px">✅ Confirmar pedido</button>
+        <button type="submit" class="btn btn-primary btn-lg cart-checkout-btn" id="checkout-btn">✅ Confirmar pedido</button>
       </form>
     </div>
   </div>
@@ -111,8 +111,8 @@
   </div>
 </div>
 
-<footer style="background:var(--bg2);border-top:1px solid var(--border);padding:24px 5%;text-align:center;color:var(--txt2);font-size:13px;margin-top:40px">
-  © 2026 Hangover Marketplace · <a href="index.html" style="color:var(--purple)">Volver al inicio</a>
+<footer class="mini-footer mini-footer-spaced">
+  © 2026 Hangover Marketplace · <a href="index.html" class="mini-footer-link">Volver al inicio</a>
 </footer>
 
 <script src="js/products.js"></script>
