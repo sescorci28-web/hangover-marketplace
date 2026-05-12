@@ -20,23 +20,23 @@
       <li><a href="catalog.html" class="active">Catálogo</a></li>
     </ul>
     <div class="nav-right">
-      <a href="login.html" class="btn btn-ghost" style="padding: 8px 16px; font-size: 14px;">Iniciar sesión</a>
+      <a href="login.html" class="btn btn-ghost nav-login-btn">Iniciar sesión</a>
       <a href="cart.html" class="cart-btn">🛒 Carrito <span class="cart-badge">0</span></a>
     </div>
   </div>
 </nav>
 
-<div style="padding:20px 5%;max-width:1280px;margin:auto">
-  <a href="catalog.html" style="color:var(--txt2);font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:var(--tr)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--txt2)'">← Volver al catálogo</a>
+<div class="back-nav-wrap">
+  <a href="catalog.html" class="back-nav-link">← Volver al catálogo</a>
 </div>
 
 <div class="pd-wrap" id="product-wrap">
-  <div style="color:var(--txt2);padding:48px;text-align:center;grid-column:1/-1">Cargando producto…</div>
+  <div class="product-loading">Cargando producto…</div>
 </div>
 
 <!-- RELATED -->
-<section style="padding:60px 5% 80px">
-  <div style="max-width:1280px;margin:auto">
+<section class="related-section">
+  <div class="related-inner">
     <div class="section-head">
       <div class="section-tag">Relacionados</div>
       <h2 class="section-title">También te puede interesar</h2>
@@ -45,8 +45,8 @@
   </div>
 </section>
 
-<footer style="background:var(--bg2);border-top:1px solid var(--border);padding:24px 5%;text-align:center;color:var(--txt2);font-size:13px">
-  © 2026 Hangover Marketplace · <a href="index.html" style="color:var(--purple)">Volver al inicio</a>
+<footer class="mini-footer">
+  © 2026 Hangover Marketplace · <a href="index.html" class="mini-footer-link">Volver al inicio</a>
 </footer>
 
 <script src="js/products.js"></script>
